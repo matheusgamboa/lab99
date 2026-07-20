@@ -54,7 +54,7 @@ export function CapabilitiesAccordion({ items }: { items: Capability[] }) {
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                onClick={() => setOpenIndex(index)}
                 onKeyDown={(event) => {
                   if (event.key === "ArrowDown") {
                     event.preventDefault();

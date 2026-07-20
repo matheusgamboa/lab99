@@ -1,6 +1,6 @@
 # Lab99
 
-Landing page da Lab99, estúdio brasileiro de software especializado em Selfware: CRM personalizado, automações, agentes de IA e integrações.
+Landing page light-first da Lab99, estúdio brasileiro de software especializado em Selfware: CRM personalizado, automações, agentes de IA e integrações.
 
 ## Como executar
 
@@ -20,10 +20,14 @@ npm run build
 npm start
 ```
 
+## Direção visual
+
+A interface usa somente a paleta institucional `#FFA057`, `#1A1A1A` e `#FFFFFF`, com bastante espaço em branco, divisões editoriais e uma única seção escura de contraste. Os logos oficiais permanecem em `public/assets/lab99/`.
+
+O fundo do hero é o componente local `components/FlickeringGrid.tsx`. Ele gera uma malha determinística de pontos laranja com animação CSS sutil e não adiciona Tailwind, shadcn, Base UI ou dependências de terceiros. O elemento é decorativo (`aria-hidden`) e vira uma composição estática quando `prefers-reduced-motion: reduce` está ativo.
+
 ## Motion e acessibilidade
 
-A experiência usa apenas CSS e pequenos componentes React, sem biblioteca de animação. `IntersectionObserver` ativa os reveals, os contadores e a progressão do processo uma única vez; o cabeçalho reage ao scroll e o acordeão mantém apenas um item aberto, com suporte a clique, `Enter`, `Espaço`, setas, `Home` e `End`.
+`IntersectionObserver` ativa as entradas de conteúdo durante o scroll. O acordeão mantém um item aberto por vez e oferece navegação por clique, `Enter`, `Espaço`, setas, `Home` e `End`. A página também inclui landmarks semânticos, skip link, foco visível, hierarquia de títulos e layouts responsivos.
 
-Quando `prefers-reduced-motion: reduce` está ativo, o vídeo do hero é pausado no poster, marquee e camadas de textura deixam de se mover, contadores exibem imediatamente o valor final e todo o conteúdo revelado por scroll fica visível sem deslocamento. O HTML mantém landmarks semânticos, skip link, foco visível e hierarquia de títulos.
-
-Todos os recursos usados em runtime são locais. Os logos oficiais, o vídeo e seu poster ficam em `public/assets/lab99/`; os demais visuais de sistema são construídos com HTML e CSS.
+Com redução de movimento ativa, o conteúdo aparece imediatamente, a malha não pisca e as transições são desativadas. Todos os recursos usados em runtime são locais.
