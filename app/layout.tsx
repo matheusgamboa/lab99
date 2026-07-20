@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Lab99" }],
   creator: "Lab99",
+  icons: {
+    icon: "/assets/lab99/logo-mono.jpg",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f1efe7",
+  themeColor: "#0c0c0c",
 };
 
 export default function RootLayout({
